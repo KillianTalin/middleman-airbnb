@@ -6,60 +6,21 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" id="home-flats">
+  <h2 class="text-center">Recent flats</h2>
   <div class="row">
+    <% data.flats.each do |owner,flat| %>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://kitt.lewagon.com/placeholder/cities/amsterdam');">
-        <div class="card-category">Popular</div>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>');">
+        <div class="card-category"><%= flat.city_name %></div>
         <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
+          <h2><%= flat.name %></h2>
+          <p><%= flat.description %></p>
         </div>
-<!--         <img class="card-user" src="user.jpg"> -->
-        <a class="card-link" href="#" ></a>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class:"card-user" %>
+        <%= link_to "", "flats/#{owner}.html", class: "card-link" %>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://kitt.lewagon.com/placeholder/cities/paris');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
-        </div>
-<!--         <img class="card-user" src="user.jpg"> -->
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://kitt.lewagon.com/placeholder/cities/london');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-          <h2>Some stuff</h2>
-          <p>Very cool stuff, useful and smart</p>
-        </div>
-<!--         <img class="card-user" src="user.jpg"> -->
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
-
-
-
-
-<!-- ---
-title: Le Wagon - Middleman
----
-
-<div id="home">
-  <div class="home-content">
-    <%= image_tag "logo.png", width: "200" %>
-    <p>
-      Middleman is now running!
-    </p>
-    <p class="about">
-      <%= link_to "More about this template", "about.html" %>
-    </p>
-  </div>
-</div>
- -->
