@@ -1,0 +1,8 @@
+<ul class="list-inline text-center">
+  <% %w(baphorn killiantalin).each do |teammate| %>
+  <li>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{teammate}", class: "img-circle avatar-large" %>
+      <h3><%= teammate.capitalize %></h3>
+  </li>
+  <% end %>
+</ul>
